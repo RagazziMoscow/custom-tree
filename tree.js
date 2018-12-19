@@ -17,7 +17,10 @@ function fileTree(dir, done, indent) {
     console.log(repeatString('  ', indent), chalk.blue.bold(path.basename(dir)));
 
     fs.readdir(dir, function(err, list) {
-        if (err) return done(err);
+        if (err) {
+            console.log(chalk.bold.red('Error of folder reading'));
+            return done(err);
+        }
 
         var pending = list.length; // ni treba za uslovi koi shto zavrshuvaat rekursija
 

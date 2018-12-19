@@ -2,7 +2,8 @@ const fileTree = require('./tree');
 
 fileTree(process.argv[2], function(err, data) {
     if(err) {
-        throw err;
+        /*throw err;*/
+        // ako sakame neshto da praime so err
     }
 
     // ako sakame lista na site fajlovi i folderi
